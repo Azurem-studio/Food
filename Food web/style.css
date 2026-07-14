@@ -1,0 +1,259 @@
+/* ===== Base ===== */
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf6ec;
+    color: #3a2b21;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #7a2e1d;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+
+/* ===== Skip to Main Content link =====
+   Positioned off-screen by default. The focus pseudo-class
+   brings it into view only when a keyboard user tabs to it. */
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 10px;
+    background-color: #7a2e1d;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 0 0 6px 6px;
+    z-index: 200;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+
+/* ===== Navigation =====
+   display: flex used here per assignment suggestion, plus
+   background, padding, and box-shadow for an attractive look. */
+header {
+    background-color: #7a2e1d;
+    padding: 10px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+nav {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+nav .brand {
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 8px 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fdf6ec;
+    text-decoration: none;
+    font-size: 1.05em;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffd7a8;
+    border-bottom: 2px solid #ffd7a8;
+}
+
+
+/* ===== Buttons / links ===== */
+.btn {
+    display: inline-block;
+    background-color: #7a2e1d;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.btn:hover {
+    background-color: #a63f28;
+    transform: translateY(-2px);
+}
+
+
+/* ===== Hero (home page) =====
+   display: flex used to lay the hero image and text side by side. */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 420px;
+    height: 280px;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    border-radius: 12px;
+    padding: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+
+/* ===== Images, box model =====
+   All images get a consistent border / padding / radius treatment. */
+img {
+    border: 4px solid #ffffff;
+    padding: 3px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+/* ===== Recipe grid (recipes page) =====
+   display: grid, two columns. */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.recipe-card {
+    background-color: #ffffff;
+    border: 1px solid #e6d8c3;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-card h3 {
+    margin: 12px 0 4px;
+}
+
+/* Hover pseudo-class with a transition */
+.recipe-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* nth-child selector: every other card gets a slightly different
+   border radius and a soft tinted background for visual rhythm */
+.recipe-card:nth-child(even) {
+    background-color: #fff3e2;
+    border-radius: 24px;
+}
+
+
+/* ===== About page ===== */
+.about-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 25px 0 40px;
+}
+
+.about-flex img {
+    width: 100%;
+    max-width: 300px;
+    height: 220px;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+.fun-facts {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.fact-card {
+    flex: 1;
+    min-width: 180px;
+    background-color: #ffffff;
+    border: 1px solid #e6d8c3;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-list a {
+    display: inline-block;
+    color: #7a2e1d;
+    text-decoration: none;
+    border: 2px solid #7a2e1d;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.contact-list a:hover {
+    background-color: #7a2e1d;
+    color: #ffffff;
+}
+
+
+/* ===== Footer ===== */
+footer {
+    background-color: #3a2b21;
+    color: #fdf6ec;
+    text-align: center;
+    padding: 18px;
+}
