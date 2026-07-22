@@ -1,4 +1,11 @@
-/* ===== Base ===== */
+/* ===== Base =====
+   scroll-behavior lives on html so the "Return to Top" link scrolls
+   smoothly. The prefers-reduced-motion query further down turns
+   this back off for visitors who asked for less motion. */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Trebuchet MS', Arial, sans-serif;
     margin: 0;
@@ -175,21 +182,23 @@ img {
 
 
 /* ===== Recipe grid (recipes page) =====
-   display: grid, two columns. */
+   Mobile-first: single column grid with a 10px gap. Wider layouts
+   are handled entirely in the tablet / large-screen media queries
+   below, so nothing here is repeated unnecessarily. */
 .recipe-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 10px;
     margin-top: 30px;
 }
 
 .recipe-card {
     background-color: #ffffff;
     border: 1px solid #e6d8c3;
-    border-radius: 12px;
     padding: 16px;
+    margin: 0;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .recipe-card img {
@@ -198,7 +207,7 @@ img {
     object-fit: cover;
 }
 
-.recipe-card h3 {
+.recipe-card figcaption h3 {
     margin: 12px 0 4px;
 }
 
@@ -208,11 +217,29 @@ img {
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
 }
 
-/* nth-child selector: every other card gets a slightly different
-   border radius and a soft tinted background for visual rhythm */
+/* nth-child selector: every other card gets a soft tinted background
+   for visual rhythm */
 .recipe-card:nth-child(even) {
     background-color: #fff3e2;
-    border-radius: 24px;
+}
+
+/* ===== Return to Top button =====
+   Scrolling on click is driven by the html { scroll-behavior: smooth }
+   rule above, not JS, so the reduced-motion query can turn it off. */
+.back-to-top {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    background-color: #7a2e1d;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease;
+}
+
+.back-to-top:hover {
+    background-color: #a63f28;
 }
 
 
@@ -288,26 +315,62 @@ footer {
 
 
 /* ===== Tablet View ===== */
-/* Triggers once the viewport reaches 772px wide.
-   Divs become 45% of the viewport width and switch to
-   inline-block so two of them can sit side by side. */
+/* Triggers once the viewport reaches 772px wide. */
 @media screen and (min-width: 772px) {
-  div {
-    width: 45vw;
-    display: inline-block;
+  .recipe-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  img {
-    max-height: 30vh;
+  /* Circular figures */
+  .recipe-card {
+    border-radius: 50%;
+  }
+
+  /* Last figure spans both columns */
+  .recipe-card:last-child {
+    grid-column: 1 / -1;
   }
 }
 
 /* ===== Large Screen View ===== */
-/* Triggers once the viewport reaches 998px wide.
-   Divs shrink to 30% of the viewport width, so three
-   now fit on one row. */
-@media screen and (min-width: 998px) {
-  div {
-    width: 30vw;
+/* Triggers once the viewport reaches 992px wide.
+   No max-width used here, per the assignment requirement. */
+@media screen and (min-width: 992px) {
+  /* Every third figure spans both columns */
+  .recipe-card:nth-child(3n) {
+    grid-column: 1 / -1;
+  }
+
+  /* Border radius removed from all figures */
+  .recipe-card {
+    border-radius: 0;
+  }
+}
+
+/* ===== Reduced Motion ===== */
+/* Visitors who prefer less motion lose the smooth scroll animation
+   triggered by the "Return to Top" link; the jump becomes instant. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== Dark Color Scheme ===== */
+/* Default site theme is light. Visitors with a system-level dark
+   preference get dark figures with light, high-contrast text. */
+@media (prefers-color-scheme: dark) {
+  .recipe-card {
+    background-color: #241a12;
+    color: #ffe27a;
+    border: 2px solid #000000;
+  }
+
+  .recipe-card figcaption h3 {
+    color: #ffe27a;
+  }
+
+  .recipe-card:nth-child(even) {
+    background-color: #1a120c;
   }
 }
