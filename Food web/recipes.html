@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="addTabIndex()">
+<body id="top" onload="addTabIndex()">
   <a href="#main-content" class="skip-link">Skip to Main Content</a>
 
   <header>
@@ -29,42 +29,56 @@
     <div id="image">Hover over an image below to display here.</div>
 
     <div class="recipe-grid">
-      <div class="recipe-card">
+      <figure class="recipe-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pepperoni_pizza.jpg" alt="A homemade pepperoni pizza fresh from the oven" onmouseover="upDate(event)" onmouseout="undo()" onfocus="upDate(event)" onblur="undo()">
-        <h3>Weeknight Pizza</h3>
-        <p>A quick dough, whatever sauce is in the fridge, and way too much cheese.</p>
-      </div>
+        <figcaption>
+          <h3>Weeknight Pizza</h3>
+          <p>A quick dough, whatever sauce is in the fridge, and way too much cheese.</p>
+        </figcaption>
+      </figure>
 
-      <div class="recipe-card">
+      <figure class="recipe-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cheeseburger.jpg" alt="A stacked cheeseburger with lettuce and tomato" onmouseover="upDate(event)" onmouseout="undo()" onfocus="upDate(event)" onblur="undo()">
-        <h3>Backyard Burgers</h3>
-        <p>Simple, juicy, and best eaten outside with friends.</p>
-      </div>
+        <figcaption>
+          <h3>Backyard Burgers</h3>
+          <p>Simple, juicy, and best eaten outside with friends.</p>
+        </figcaption>
+      </figure>
 
-      <div class="recipe-card">
+      <figure class="recipe-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pasta.jpg" alt="A bowl of pasta tossed in a rich sauce" onmouseover="upDate(event)" onmouseout="undo()" onfocus="upDate(event)" onblur="undo()">
-        <h3>Garlic Butter Pasta</h3>
-        <p>My go-to when I want something fast but still feel fancy.</p>
-      </div>
+        <figcaption>
+          <h3>Garlic Butter Pasta</h3>
+          <p>My go-to when I want something fast but still feel fancy.</p>
+        </figcaption>
+      </figure>
 
-      <div class="recipe-card">
+      <figure class="recipe-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_Fried_Rice.JPG" alt="A plate of seasoned fried rice" onmouseover="upDate(event)" onmouseout="undo()" onfocus="upDate(event)" onblur="undo()">
-        <h3>Fried Rice, Fridge Edition</h3>
-        <p>The best way to use up leftover rice and whatever vegetables are left.</p>
-      </div>
+        <figcaption>
+          <h3>Fried Rice, Fridge Edition</h3>
+          <p>The best way to use up leftover rice and whatever vegetables are left.</p>
+        </figcaption>
+      </figure>
 
-      <div class="recipe-card">
+      <figure class="recipe-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Samosa.JPG" alt="Crispy golden samosas on a plate" onmouseover="upDate(event)" onmouseout="undo()" onfocus="upDate(event)" onblur="undo()">
-        <h3>Crispy Samosas</h3>
-        <p>Crunchy on the outside, warm and spiced on the inside.</p>
-      </div>
+        <figcaption>
+          <h3>Crispy Samosas</h3>
+          <p>Crunchy on the outside, warm and spiced on the inside.</p>
+        </figcaption>
+      </figure>
 
-      <div class="recipe-card">
+      <figure class="recipe-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate_cake_(1).jpg" alt="A decadent dessert plated neatly" onmouseover="upDate(event)" onmouseout="undo()" onfocus="upDate(event)" onblur="undo()">
-        <h3>Something Sweet</h3>
-        <p>Because every meal deserves a proper ending.</p>
-      </div>
+        <figcaption>
+          <h3>Something Sweet</h3>
+          <p>Because every meal deserves a proper ending.</p>
+        </figcaption>
+      </figure>
     </div>
+
+    <a href="#top" class="back-to-top">Return to Top</a>
   </main>
 
   <footer>
