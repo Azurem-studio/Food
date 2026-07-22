@@ -28,3 +28,19 @@ function undo() {
     // Step 4.2: reset the text back to the original message
     imageBox.textContent = "Hover over an image below to display here.";
 }
+
+// Runs when the page finishes loading (see onload on <body>)
+function addTabIndex() {
+    // Step 9.1: confirm the event is firing
+    console.log("addTabIndex triggered");
+
+    // Grab every thumbnail image in the recipe grid
+    let thumbnails = document.querySelectorAll(".recipe-card img");
+
+    // Step 9.2: loop through each image
+    for (let i = 0; i < thumbnails.length; i++) {
+        // Step 9.3: add the tabindex attribute so each image can
+        // receive keyboard focus (0 keeps it in natural tab order)
+        thumbnails[i].setAttribute("tabindex", "0");
+    }
+}
