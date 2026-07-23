@@ -305,6 +305,36 @@ img {
 }
 
 
+/* ===== Video sections (home + recipes pages) =====
+   The wrapper keeps a 16:9 ratio at any screen width so the embedded
+   video never gets distorted or overflows on mobile. */
+.video-section {
+    margin: 40px 0;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    padding-bottom: 39.375%; /* 700 * 9/16, capped so it never exceeds max-width height */
+    aspect-ratio: 16 / 9;
+    height: 0;
+    margin: 15px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
 /* ===== Footer ===== */
 footer {
     background-color: #3a2b21;
