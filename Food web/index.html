@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="initCarousel()">
   <a href="#main-content" class="skip-link">Skip to Main Content</a>
 
   <header>
@@ -42,6 +42,32 @@
       <p>New recipes go up regularly, so check back often — and if you try one, let me know how it turned out!</p>
     </section>
 
+    <section class="carousel-section">
+      <h2>Featured Dishes</h2>
+      <p>A few favorites from the recipe box. Use the arrows or dots to browse — nothing moves on its own.</p>
+
+      <div class="carousel" id="carousel">
+        <button type="button" class="carousel-btn prev" id="carousel-prev" aria-label="Previous dish">&#10094;</button>
+
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track" id="carousel-track">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pepperoni_pizza.jpg"
+              alt="A homemade pepperoni pizza fresh from the oven">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cheeseburger.jpg"
+              alt="A stacked cheeseburger with lettuce and tomato">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Samosa.JPG"
+              alt="Crispy golden samosas on a plate">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate_cake_(1).jpg"
+              alt="A decadent chocolate dessert plated neatly">
+          </div>
+        </div>
+
+        <button type="button" class="carousel-btn next" id="carousel-next" aria-label="Next dish">&#10095;</button>
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </section>
+
     <section class="video-section">
       <h2>Watch Me Cook</h2>
       <p>A quick look at one of my favorite easy weeknight pizzas, start to finish.</p>
@@ -57,6 +83,8 @@
   <footer>
     <p>&copy; 2026 Azurem's Kitchen. Made with love (and a little too much garlic).</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
