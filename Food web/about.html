@@ -52,12 +52,38 @@
       </div>
     </div>
 
+    <h2>Where I Shop</h2>
+    <p>Most of what ends up in these recipes starts here — the Ann Arbor Farmers Market.</p>
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps?q=Ann+Arbor+Farmers+Market,+Ann+Arbor,+MI&z=15&output=embed"
+        title="Map showing the Ann Arbor Farmers Market" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
     <h2>Get In Touch</h2>
     <ul class="contact-list">
       <li><a href="mailto:hello@azuremskitchen.example">Email Me</a></li>
       <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
       <li><a href="recipes.html">Browse Recipes</a></li>
     </ul>
+
+    <section class="site-notes">
+      <h2>Site Notes</h2>
+      <p>Four extras added for the final project, beyond the earlier course assignments:</p>
+      <ul>
+        <li><strong>Live recipe search</strong> — a JavaScript filter on the Recipes page that hides
+          non-matching cards as you type, with a dynamically shown "no results" message.</li>
+        <li><strong>Image carousel</strong> — the Featured Dishes carousel on the Home page. Navigation
+          is manual only (prev/next buttons and dot indicators) — autoplay is intentionally off.</li>
+        <li><strong>Sticky footer</strong> — a flexbox layout (<code>body</code> as a column flex
+          container, <code>main</code> set to <code>flex: 1</code>) keeps the footer pinned to the
+          bottom of the viewport on every page, even short ones, regardless of browser window height.</li>
+        <li><strong>Google Maps plugin</strong> — the embed above. I customized the query to a specific
+          address and set <code>z=15</code> for a closer zoom than the default, then wrapped it in a
+          responsive container matching the site's existing video embeds.</li>
+      </ul>
+    </section>
   </main>
 
   <footer>
